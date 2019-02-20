@@ -3,7 +3,7 @@ A flexible, open-source package to optimize a Linear Function Over the Set of Ef
 
 
 **Documentation:**
-[![](https://img.shields.io/badge/docs-stable-blue.svg)](http://eng.usf.edu~amsierra/docs/build/)
+[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://alvsierra286.github.io/OOESAlg/docs/build/)
 
 This is a criterion space search for optimizing a linear function over the set of efficient solutions of bi-objective mixed integer linear programs. This project is a julia v0.6.2 project which is written in Linux (Ubuntu).
 
