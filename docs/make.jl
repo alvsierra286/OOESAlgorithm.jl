@@ -17,7 +17,7 @@ deploydocs(
 	repo = "github.com/alvsierra286/OOESAlg.git",
     target = "build",
     osname = "linux",
-    julia  = "1.0",
+    julia  = "0.6",
     deps   = nothing,
     make   = nothing,
 )
