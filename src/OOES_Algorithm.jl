@@ -26,7 +26,7 @@
 #                                                                             #
 ###############################################################################
 
-using JuMP, MathProgBase, GLPKMathProgInterface, Pkg, SparseArrays
+#using JuMP, MathProgBase, GLPKMathProgInterface, Pkg, SparseArrays
 
 include("Storage.jl")
 include("Read_Instances.jl")
@@ -240,5 +240,5 @@ end
 		Total_Time = time() - Start_Time
 		Writing_The_Output_File(Opt_Solution, Total_Time, threads, stats, GLB)
 	end
-	Opt_Solution.obj_vals
+	Opt_Solution
 end
