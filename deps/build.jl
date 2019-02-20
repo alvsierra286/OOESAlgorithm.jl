@@ -1,5 +1,5 @@
 using Pkg
-if !("MathProgBasse" in keys(Pkg.installed()))
+if !("MathProgBase" in keys(Pkg.installed()))
 	Pkg.add("MathProgBase")
 end
 if !("MathOptInterface" in keys(Pkg.installed()))
