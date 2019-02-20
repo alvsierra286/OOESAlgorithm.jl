@@ -240,5 +240,5 @@ end
 		Total_Time = time() - Start_Time
 		Writing_The_Output_File(Opt_Solution, Total_Time, threads, stats, GLB)
 	end
-	Opt_Solution
+	Opt_Solution.obj_vals
 end
