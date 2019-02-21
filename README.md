@@ -1,7 +1,7 @@
 # OOES.jl
 A flexible, open-source package to optimize a Linear Function Over the Set of Efficient Solutions for BOMILP
 
-This is a criterion space search for optimizing a linear function over the set of efficient solutions of bi-objective mixed integer linear programs. This project is a julia v0.6.2 project which is written in Linux (Ubuntu).
+This is a criterion space search for optimizing a linear function over the set of efficient solutions of bi-objective mixed integer linear programs. This project is a julia v1.0.2 project which is written in Linux (Ubuntu).
 
 ### The following problem classes are supported:
 i. Objectives:    2 linear objectives.
@@ -28,7 +28,13 @@ OOES.jl automatically installs FPBH.jl which comes with GLPK by default. If the 
     b. All parameters are already tuned.
     c. Supports parallelization
 
-### Supporting and Citing
-The software in this ecosystem was developed as part of academic research. If you would like to help support it, please star the repository as such metrics may help us secure funding in the future. We would be grateful if you could cite:
+## Supporting and Citing: ##
 
-[Sierra-Altamiranda, A. and Charkhgard, H. (2018). OOES.jl: A julia package for optimizing a linear function over the set of efficient solutions for bi-objective mixed integer linear programming.](http://www.optimization-online.org/DB_FILE/2018/04/6596.pdf)
+The software in this ecosystem was developed as part of academic research. If you would like to help support it, please star the repository as such metrics may help us secure funding in the future. If you use [OOESAlg](https://github.com/alvsierra286/OOESAlg) software as part of your research, teaching, or other activities, we would be grateful if you could cite:
+
+1. [Sierra-Altamiranda, A. and Charkhgard, H., A New Exact Algorithm to Optimize a Linear Function Over the Set of Efficient Solutions for Bi-objective Mixed Integer Linear Programming.](http://www.optimization-online.org/DB_FILE/2017/10/6262.pdf).
+2. [Sierra-Altamiranda, A. and Charkhgard, H. (2018). OOES.jl: A julia package for optimizing a linear function over the set of efficient solutions for bi-objective mixed integer linear programming.](http://www.optimization-online.org/DB_FILE/2018/04/6596.pdf).
+
+## Contributions ##
+
+This package is written and maintained by [Alvaro Sierra-Altamiranda](https://github.com/alvsierra286). Please fork and send a pull request or create a [GitHub issue](https://github.com/alvsierra286/OOESAlg/issues) for bug reports or feature requests.
