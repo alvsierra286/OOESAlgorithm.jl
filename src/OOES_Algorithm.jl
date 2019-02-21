@@ -204,6 +204,11 @@ end
 			Opt_Solution, stats, GLB = OOES_parallel(instance, instance2, Partial_Solutions, Priority_Queue, number_of_cont_variables, number_of_int_or_bin_variables, Feasible_Solution, Opt_Solution, threads, parallelization, timelimit, stats)
 		end
 		Total_Time = time() - Start_Time
+    for i in 1:length(sense)
+        if sense[i] == :Max
+            Opt_Solution.obj_vals[i] = -1.0*Opt_Solution.obj_vals[i]
+        end
+    end
 		Writing_The_Output_File(Opt_Solution, Total_Time, threads, stats, GLB)
 	end
 	Opt_Solution
@@ -213,7 +218,6 @@ end
 # READING INSTANCE FROM LP OR MPS FILE #
 ########################################
 @inbounds function OOES(filename::String; mipsolver::Int64=1, mip_solver::MathProgBase.SolverInterface.AbstractMathProgSolver=GLPKSolverMIP(), threads::Int64=1, parallelization::Int64=1, timelimit::Float64=86400.0, relative_gap::Float64=1.0e-6, sense::Array{Symbol,1} = [:Min, :Min, :Min])
-	sense = [:Min, :Min, :Min]
 	GLB::Float64 = -1e10
 	Opt_Solution = OOESolution()
 	if mipsolver == 2
@@ -238,6 +242,11 @@ end
 			Opt_Solution, stats, GLB = OOES_parallel(instance, instance2, Partial_Solutions, Priority_Queue, number_of_cont_variables, number_of_int_or_bin_variables, Feasible_Solution, Opt_Solution, threads, parallelization, timelimit, stats)
 		end
 		Total_Time = time() - Start_Time
+    for i in 1:length(sense)
+        if sense[i] == :Max
+            Opt_Solution.obj_vals[i] = -1.0*Opt_Solution.obj_vals[i]
+        end
+    end
 		Writing_The_Output_File(Opt_Solution, Total_Time, threads, stats, GLB)
 	end
 	Opt_Solution
