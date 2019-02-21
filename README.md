@@ -1,6 +1,8 @@
 # OOES.jl
 A flexible, open-source package to optimize a Linear Function Over the Set of Efficient Solutions for BOMILP
 
+Follow this link for the [Documentation](http://eng.usf.edu/~amsierra/documents/Documentation_OOESAlg.pdf).
+
 This is a criterion space search for optimizing a linear function over the set of efficient solutions of bi-objective mixed integer linear programs. This project is a julia v1.0.2 project which is written in Linux (Ubuntu).
 
 ### The following problem classes are supported:
