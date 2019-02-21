@@ -26,6 +26,7 @@
 #                                                                             #
 ###############################################################################
 
+__precompile__()
 module OOESAlg
 
 using Distributed, MathOptInterface, JuMP, MathProgBase, GLPK, GLPKMathProgInterface, Pkg, SparseArrays
