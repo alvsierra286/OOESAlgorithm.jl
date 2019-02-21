@@ -1,8 +1,8 @@
 
 Open Software License ("OSL") v 3.0
 
-This Open Software License (the "License") applies to any original work of
-authorship (the "Original Work") whose owner (the "Licensor") has placed the
+This Open Software License (LICENSE) applies to any original work of
+authorship (OOESAlg.jl) whose owner (Alvaro Sierra-Altamiranda) has placed the
 following licensing notice adjacent to the copyright notice for the Original
 Work:
 
@@ -16,7 +16,7 @@ the following:
   collective work;
 
   b) to translate, adapt, alter, transform, modify, or arrange the Original
-  Work, thereby creating derivative works ("Derivative Works") based upon the
+  Work, thereby creating derivative works based upon the
   Original Work;
 
   c) to distribute or communicate copies of the Original Work and Derivative
