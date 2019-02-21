@@ -15,7 +15,7 @@ iii. Variables:
     d. Any combination between previous types of variables.
 
 ### A multiobjective mixed integer linear instance can be provided as a input in 3 ways:
-    a. ModoModel - an extension of JuMP Model
+    a. JuMP Model
     b. LP file format
     c. MPS file format
 
