@@ -20,7 +20,7 @@ iii. Variables:
     c. MPS file format
 
 ### Any mixe integer programming solver supported by MathProgBase.jl can be used.
-OOES.jl automatically installs FPBH.jl which comes with GLPK by default. If the user desires to use any other MIP solver, it must be separately installed. 
+OOES.jl automatically installs GLPK by default. If the user desires to use any other MIP solver, it must be separately installed. 
 
     a. OOES.jl has been successfully tested with:
         i.      GLPK - v4.61
