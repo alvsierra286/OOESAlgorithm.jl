@@ -26,7 +26,8 @@ end
     if temp_val == false
 	    cons_lb = cons_lb[1:end-length(sense)]
 	    cons_ub = cons_ub[1:end-length(sense)]
-	    c[1:end, :] = A[end-length(sense)+1:end, :]
+	    c[2:end, :] = A[end-length(sense)+1:end-length(sense)+2, :]
+	    c[1, :] = A[end, :]
 	    A = A[1:end-length(sense), :]
     else
 	    i = 1; j = 0

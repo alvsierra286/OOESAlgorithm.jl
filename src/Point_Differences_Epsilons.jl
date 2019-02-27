@@ -14,6 +14,9 @@ end
 @inbounds function Point_Difference(element3::OOESolution, element1::OOESolution, element2::OOESolution)
 	Epsilon2 = 0.15
 	x = false
+	if length(element3.obj_vals) == 0
+		return x
+	end
 	Point_Diff11 = abs(element2.obj_vals[2] - element3.obj_vals[2])
 	Point_Diff12 = abs(element1.obj_vals[3] - element3.obj_vals[3])
 	Point_Diff21 = (element2.obj_vals[2] - element1.obj_vals[2]) * Epsilon2

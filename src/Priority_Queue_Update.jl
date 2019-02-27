@@ -27,6 +27,35 @@
 	end
 end
 
+@inbounds function insert_element_in_queue!(Opt_Solution::Vector{OOESolution}, nondominated_point::OOESolution)
+	if length(Opt_Solution) > 0
+		x = 1
+		sw = false
+		while nondominated_point.obj_vals[3] < Opt_Solution[x].obj_vals[3]
+			if x == length(Opt_Solution)
+				push!(Opt_Solution, nondominated_point)
+				sw = true
+				break
+			end
+			x += 1
+		end
+		if sw == false
+			insert!(Opt_Solution, x, nondominated_point)
+		end
+	else
+		push!(Opt_Solution, nondominated_point)
+	end
+end
+
+@inbounds function indicate_line!(Opt_Solution::Vector{OOESolution}, nondominated_point::OOESolution)
+	x = 1
+	sw = false
+	while nondominated_point.obj_vals[3] < Opt_Solution[x].obj_vals[3]
+		x += 1
+	end
+	Opt_Solution[x-1].fxopt = true
+end
+
 @inbounds function Update_Queue_Top!(Priority_Queue::Vector{EOPriorQueue}, Condition1::Bool, Condition2::Bool, Feasible_Solution::OOESolution)
 	x = 1
 	sw = false
@@ -72,4 +101,34 @@ end
 	element2 = element.Sol_Bottom
 	popfirst!(Priority_Queue)
 	element, element1, element2, Priority_Queue
+end
+
+@inbounds function type_of_output(pareto_frontier::Bool)
+	if pareto_frontier
+		temp = OOESolution[]
+		return temp
+	else
+		temp = OOESolution()
+		return temp
+	end
+end
+
+@inbounds function type_of_output(threads::Int64, parallelization::Int64, pareto_frontier::Bool)
+	if pareto_frontier
+		if parallelization != 4
+			temp = fill(Opt_Pareto_Solutions(), threads)
+			return temp	
+		else
+			temp = fill(Parallel_Pareto_Solutions(), threads)
+			return temp
+		end	
+	else
+		if parallelization != 4
+			temp = fill(Opt_Solutions(), threads)
+			return temp
+		else
+			temp = fill(Parallel_Solutions(), threads)
+			return temp
+		end
+	end
 end

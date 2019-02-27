@@ -64,6 +64,16 @@ function Opt_Solutions(;Opt_Solution::OOESolution=OOESolution(), stats=Dict(), G
 	Opt_Solutions(Opt_Solution, stats, GLB)
 end
 
+mutable struct Opt_Pareto_Solutions <: Parallel_Opt_Solution
+	tmp_solution::Vector{OOESolution}
+	stats::Dict
+	GLB::Float64
+end
+
+function Opt_Pareto_Solutions(;Opt_Solution::Vector{OOESolution}=OOESolution[], stats=Dict(), GLB::Float64=0.0)
+	Opt_Pareto_Solutions(Opt_Solution, stats, GLB)
+end
+
 abstract type Parallel_Vector end
 
 mutable struct Parallel_Solutions <: Parallel_Vector
@@ -76,6 +86,18 @@ end
 
 function Parallel_Solutions(;Priority_Queue::Vector{EOPriorQueue} = EOPriorQueue[], Partial_Solutions::Vector{OOESolution} = OOESolution[], Opt_Solution::OOESolution = OOESolution(), GUB::Float64 = 0.0, stats=Dict())
 	Parallel_Solutions(Priority_Queue, Partial_Solutions, Opt_Solution, GUB, stats)
+end
+
+mutable struct Parallel_Pareto_Solutions <: Parallel_Vector
+	Priority_Queue::Vector{EOPriorQueue}
+	Partial_Solutions::Vector{OOESolution}
+	Opt_Solution::Vector{OOESolution}
+	GUB::Float64
+	stats::Dict
+end
+
+function Parallel_Pareto_Solutions(;Priority_Queue::Vector{EOPriorQueue} = EOPriorQueue[], Partial_Solutions::Vector{OOESolution} = OOESolution[], Opt_Solution::Vector{OOESolution} = OOESolution[], GUB::Float64 = 0.0, stats=Dict())
+	Parallel_Pareto_Solutions(Priority_Queue, Partial_Solutions, Opt_Solution, GUB, stats)
 end
 ################################
 # INITIALIZATION OF STATISTICS #

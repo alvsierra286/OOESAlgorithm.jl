@@ -28,13 +28,7 @@ end
 	compute_objective_function_value!(tmp, instance)
 	tmp.fxopt = false
 	lambda_top::Float64 = (lambda2 * tmp.obj_vals[2] + lambda3 * tmp.obj_vals[3]) - (lambda2 * element1.obj_vals[2] + lambda3 * element1.obj_vals[3])
-	#gap_line1::Float64 = 0.0
-	#Gap_Points1, Gap_Points2 = Point_Difference2(element1, element2)
-	#if ((Gap_Points1 /abs(element1.obj_vals[2])) < 5e-3 && (Gap_Points2 /abs(element1.obj_vals[3])) < 5e-3)
-	#	gap_line1 = (abs(lambda2 * element1.obj_vals[2]) + abs(lambda3 * element1.obj_vals[3])) * 5.e-6
-	#else
 	gap_line1 = (abs(lambda2 * element1.obj_vals[2]) + abs(lambda3 * element1.obj_vals[3])) * 1e-5
-	#end
 	if (lambda_top < (gap_line1 + 1e-5) * -1)
 		insert!(Partial_Solutions, counter_solutions + 1, tmp)	
 	else
@@ -64,13 +58,16 @@ end
 ######################
 # WEIGHTED SUM UPDATE#
 ######################
-@inbounds function Weighted_Sum_Update(Priority_Queue::Vector{EOPriorQueue}, Partial_Solutions::Vector{OOESolution}, counter_solutions::Int64, element::EOPriorQueue)
+@inbounds function Weighted_Sum_Update(Priority_Queue::Vector{EOPriorQueue}, Partial_Solutions::Vector{OOESolution}, counter_solutions::Int64, element::EOPriorQueue, Opt_Solution::Union{OOESolution, Vector{OOESolution}}, pareto_frontier::Bool)
 	for i in 2:counter_solutions
 		insert_element_in_queue!(Priority_Queue, Partial_Solutions[counter_solutions - i + 1], Partial_Solutions[counter_solutions - i + 2], true, element.Direction, element.LBound)
+		if pareto_frontier && i != counter_solutions
+			insert_element_in_queue!(Opt_Solution, Partial_Solutions[counter_solutions - i + 1])
+		end
 		pop!(Partial_Solutions)
 	end	
 	pop!(Partial_Solutions)
-	Priority_Queue, Partial_Solutions
+	Priority_Queue, Partial_Solutions, Opt_Solution
 end
 
 ################
