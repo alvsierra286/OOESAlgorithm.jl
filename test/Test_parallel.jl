@@ -26,7 +26,7 @@ model = Model()
 @constraint(model, 26x[2]+50x[6]-74x[7]-20x[10]+81y[11]+14x[1]-88x[3]-42x[4]+74x[8]-54x[9]-56y[12]+42x[5]+82y[13]+68y[14]-54y[15]-25y[16]-16y[17]+100y[18]-55y[19]-13y[20]==0)
 @constraint(model, 5x[2]-x[6]+8x[7]+8x[10]-127y[11]+8x[1]-8x[3]-3x[4]+7x[8]+5x[9]-73y[12]-2x[5]-128y[13]+146y[14]+167y[15]+131y[16]-132y[17]-73y[18]+132y[19]-33y[20]==0)
 @constraint(model, 9x[2]+7x[6]-7x[7]+9x[10]-167y[11]-8x[1]+2x[3]-5x[4]+5x[8]+8x[9]+16y[12]+5x[5]+136y[13]+98y[14]+29y[15]+48y[16]-80y[17]+60y[18]-99y[19]+141y[20]== 0)
-using OOESAlg
+using OOESAlgorithm
 Solution1 = OOES(model, threads=length(procs())-1)
 Solution2 = OOES("c20instance.lp", threads=length(procs())-1)
 Solution3 = OOES("c20instance.mps", threads=length(procs())-1)
