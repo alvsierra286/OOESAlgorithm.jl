@@ -2,7 +2,7 @@
 Open Software License ("OSL") v 3.0
 
 This Open Software License (LICENSE) applies to any original work of
-authorship (OOESAlg.jl) whose owner (Alvaro Sierra-Altamiranda) has placed the
+authorship (OOESAlgorithm.jl) whose owner (Alvaro Sierra-Altamiranda) has placed the
 following licensing notice adjacent to the copyright notice for the Original
 Work:
 
