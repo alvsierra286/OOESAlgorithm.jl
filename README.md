@@ -34,7 +34,7 @@ OOES.jl automatically installs GLPK by default. If the user desires to use any o
 
 The software in this ecosystem was developed as part of academic research by [Alvaro Sierra-Altamiranda](http://eng.usf.edu/~amsierra) and [Hadi Charkhgard](http://eng.usf.edu/~hcharkhgard), members of the Multi--Objective Optimization laboratory at the [University of south florida](http://www.usf.edu). If you would like to help support it, please star the repository as such metrics may help us secure funding in the future. If you use [OOESAlgorithm](https://github.com/alvsierra286/OOESAlgorithm) software as part of your research, teaching, or other activities, we would be grateful if you could cite:
 
-1. [Sierra-Altamiranda, A. and Charkhgard, H., A New Exact Algorithm to Optimize a Linear Function Over the Set of Efficient Solutions for Bi-objective Mixed Integer Linear Programming.](http://www.optimization-online.org/DB_FILE/2017/10/6262.pdf).
+1. [Sierra-Altamiranda, A. and Charkhgard, H., A New Exact Algorithm to Optimize a Linear Function Over the Set of Efficient Solutions for Bi-objective Mixed Integer Linear Programming.](http://www.optimization-online.org/DB_FILE/2017/10/6262.pdf) To appear at [INFORMS Journal On Computing](https://pubsonline.informs.org/journal/ijoc).
 2. [Sierra-Altamiranda, A. and Charkhgard, H. (2018). OOES.jl: A julia package for optimizing a linear function over the set of efficient solutions for bi-objective mixed integer linear programming.](http://www.optimization-online.org/DB_FILE/2018/04/6596.pdf).
 
 ## Contributions ##
