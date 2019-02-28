@@ -35,9 +35,9 @@ if length(procs())-1 == 0
     println("Solution test 1: ", Solution1.obj_vals)
     println("Solution test 2: ", Solution2.obj_vals)
     println("Solution test 3: ", Solution3.obj_vals)
-    "Test successful"
+    println("Test successful")
   catch
-    "Installation error"
+    println("Installation error")
   end
 else
   try
@@ -47,8 +47,8 @@ else
     println("Solution test 1: ", Solution1.obj_vals)
     println("Solution test 2: ", Solution2.obj_vals)
     println("Solution test 3: ", Solution3.obj_vals)
-    "Test successful"
+    println("Test successful")
   catch
-    "Installation error"
+    println("Installation error")
   end
 end  
