@@ -23,6 +23,7 @@ end
     cons_ub = MathProgBase.getconstrUB(model)
     m, n = size(A)
     c = zeros(length(sense), n)
+    c_prime = zeros(length(sense), n)
     if temp_val == false
 	    cons_lb = cons_lb[1:end-length(sense)]
 	    cons_ub = cons_ub[1:end-length(sense)]
@@ -38,26 +39,35 @@ end
 				cons_lb = cons_lb[2:end]
 				cons_ub = cons_ub[2:end]
 				for k in 1:n
-				   c[j, k] = A[1, k]
+				   c_prime[j, k] = A[1, k]
 				end
 				A = A[2:end, :]
 			elseif i < length(cons_lb)
 				cons_lb = vcat(cons_lb[1:i-1],cons_lb[i+1:end])
 				cons_ub = vcat(cons_ub[1:i-1],cons_ub[i+1:end])
 				for k in 1:n
-				   c[j, k] = A[i, k]
+				   c_prime[j, k] = A[i, k]
 				end
 				A = vcat(A[1:i-1, :],A[i+1:end, :])
 			else
 				cons_lb = cons_lb[1:end-1]
 				cons_ub = cons_ub[1:end-1]
 				for k in 1:n
-				   c[j, k] = A[end, k]
+				   c_prime[j, k] = A[end, k]
 				end
 				A = A[1:end-1, :]
 			end
 		else
 			i += 1
+		end
+	    end
+	    for i in 1:length(sense)
+		for j in 1:n
+			if i<length(sense)
+				c[i+1,j] = c_prime[i, j]
+			else
+				c[1,j] = c_prime[i, j]
+			end
 		end
 	    end
     end
