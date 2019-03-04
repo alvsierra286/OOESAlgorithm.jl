@@ -1,5 +1,5 @@
 # OOESAlgorithm.jl
-###(Latest version: v0.1.1)
+### (Latest version: v0.1.1)
 
 A flexible, open-source package to optimize a Linear Function Over the Set of Efficient Solutions for BOMILP
 
