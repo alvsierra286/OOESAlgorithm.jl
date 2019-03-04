@@ -26,7 +26,7 @@ OOES.jl automatically installs GLPK by default. If the user desires to use any o
 
     a. OOES.jl has been successfully tested with:
         i.      GLPK - v4.61
-        ii.     SCIP - v5.0.1
+        ii.     SCIP - v5.0.1 (Supports only SCIP.jl v0.6.1 and olders)
         iii.    Gurobi - v7.5
         iv.     CPLEX - v12.7.
     b. All parameters are already tuned.
