@@ -88,7 +88,7 @@ end
 	elseif mipsolver == 4
 		mip_solver=SCIPSolver("display/verblevel", 0, "limits/gap", relative_gap)
 	elseif mipsolver == 5
-		mip_solver=Xpress.XpressSolver(XPRS_THREADS=1, XPRS_STOP_MIPGAP=relative_gap, XPRS_OUTPUTLOG=0)
+		mip_solver=Xpress.XpressSolver(THREADS=1, STOP_MIPGAP=relative_gap, OUTPUTLOG=0)
 	end
 	mip_solver
 end
