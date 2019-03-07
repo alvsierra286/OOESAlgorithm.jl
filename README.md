@@ -1,5 +1,5 @@
 # OOESAlgorithm.jl
-### (Latest version: v0.1.2)
+### (Latest version: v0.1.3)
 
 A flexible, open-source package to optimize a Linear Function Over the Set of Efficient Solutions for BOMILP
 
@@ -29,6 +29,7 @@ OOES.jl automatically installs GLPK by default. If the user desires to use any o
         ii.     SCIP - v5.0.1 (Supports only SCIP.jl v0.6.1 and olders)
         iii.    Gurobi - v7.5
         iv.     CPLEX - v12.7.
+        v.      Xpress - v8.5.
     b. All parameters are already tuned.
     c. Supports parallelization
 
