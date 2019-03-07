@@ -96,14 +96,14 @@ end
 				Local_LB2 = Feasible_Solution_4.obj_vals[1]
 			end
 		end
-		if Local_LB2 < GUB - Compute_Epsilon(GUB) && Point_Difference4(element1, Feasible_Solution_4)
+		if Local_LB2 < GUB - Compute_Epsilon(GUB) && Point_Difference4(element1, Feasible_Solution_4) && Point_Difference4(element2, Feasible_Solution_4)
 			insert_element_in_queue!(Priority_Queue, element1, Feasible_Solution_4, false, true, Local_LB2)
 		end
 		if Local_LB1 < GUB - Compute_Epsilon(GUB) && Point_Difference4(element2, Feasible_Solution_3)
 			insert_element_in_queue!(Priority_Queue, Feasible_Solution_3, element2, false, true, Local_LB1)
 		end
 	else
-		if Point_Difference4(element1, Feasible_Solution_4)
+		if Point_Difference4(element1, Feasible_Solution_4) && Point_Difference4(element2, Feasible_Solution_4)
 			insert_element_in_queue!(Priority_Queue, element1, Feasible_Solution_4, false, true, Local_LB2)
 		end
 		if Point_Difference4(element2, Feasible_Solution_3)
@@ -192,14 +192,14 @@ end
 		if Local_LB2 < GUB - Compute_Epsilon(GUB) && Point_Difference4(element1, Feasible_Solution_3) 
 			insert_element_in_queue!(Priority_Queue, element1, Feasible_Solution_3, false, false, Local_LB2)
 		end
-		if Local_LB1 < GUB - Compute_Epsilon(GUB) && Point_Difference4(element2, Feasible_Solution_4) 
+		if Local_LB1 < GUB - Compute_Epsilon(GUB) && Point_Difference4(element2, Feasible_Solution_4)  && Point_Difference4(element1, Feasible_Solution_4)
 			insert_element_in_queue!(Priority_Queue, Feasible_Solution_4, element2, false, false, Local_LB1)
 		end
 	else
 		if Point_Difference4(element1, Feasible_Solution_3) 
 			insert_element_in_queue!(Priority_Queue, element1, Feasible_Solution_3, false, false, Local_LB2)
 		end
-		if Point_Difference4(element2, Feasible_Solution_4) 
+		if Point_Difference4(element2, Feasible_Solution_4)  && Point_Difference4(element1, Feasible_Solution_4)
 			insert_element_in_queue!(Priority_Queue, Feasible_Solution_4, element2, false, false, Local_LB1)
 		end
 	end
